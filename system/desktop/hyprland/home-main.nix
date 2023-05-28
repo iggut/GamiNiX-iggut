@@ -6,16 +6,6 @@
 lib.mkIf config.main.user.enable {
   home-manager.users.${config.main.user.username} = lib.mkIf config.desktop-environment.hyprland.enable {
     home.file = {
-      ".config/hypr/hyprland.conf" = {
-        source = ../../configs/hyprland.conf;
-        recursive = true;
-        force = true;
-      }; # Add hyprland config
-      ".config/hypr/scripts/volume" = {
-        source = ../../scripts/volume;
-        recursive = true;
-        force = true;
-      }; # Add volume control script for bars
       ".config/hypr/scripts/change-bg.sh" = {
         source = ../../scripts/change-bg.sh;
         recursive = true;

@@ -41,13 +41,16 @@ in
 
       gaps = {
         inner = 6;
-        outer = 14;
+        outer = 12;
         smartBorders = "on";
       };
 
       assigns = {
-        "3" = [{ class = "^Slack$"; } { class = "^webcord$"; }];
-        "2" = [{ class = "^firedragon$"; }];
+        "2" = [{ class = "^code-url-handler$"; }];
+        "5" = [{ class = "^looking-glass-client$"; }];
+        "4" = [{ class = "^startup-monitor$"; } { class = "^corectrl$"; }];
+        "3" = [{ class = "^signal$"; } { title = "^WebCord$"; }];
+        "1" = [{ class = "^firedragon$"; }];
       };
 
       workspaceOutputAssign = [
@@ -57,10 +60,38 @@ in
         }
         {
           workspace = "2";
-          output = "${host.secondMonitor}";
+          output = "${host.mainMonitor}";
         }
         {
           workspace = "3";
+          output = "${host.mainMonitor}";
+        }
+        {
+          workspace = "4";
+          output = "${host.mainMonitor}";
+        }
+        {
+          workspace = "5";
+          output = "${host.mainMonitor}";
+        }
+        {
+          workspace = "6";
+          output = "${host.mainMonitor}";
+        }
+        {
+          workspace = "7";
+          output = "${host.secondMonitor}";
+        }
+        {
+          workspace = "8";
+          output = "${host.secondMonitor}";
+        }
+        {
+          workspace = "9";
+          output = "${host.secondMonitor}";
+        }
+        {
+          workspace = "10";
           output = "${host.secondMonitor}";
         }
       ];
@@ -117,6 +148,8 @@ in
         "${modifier}+6" = "workspace 6";
         "${modifier}+7" = "workspace 7";
         "${modifier}+8" = "workspace 8";
+        "${modifier}+9" = "workspace 9";
+        "${modifier}+0" = "workspace 10";
 
         "${modifier}+Ctrl+x" = "move workspace to output next";
 
@@ -128,6 +161,8 @@ in
         "${modifier}+Ctrl+6" = "move container to workspace 6";
         "${modifier}+Ctrl+7" = "move container to workspace 7";
         "${modifier}+Ctrl+8" = "move container to workspace 8";
+        "${modifier}+Ctrl+9" = "move container to workspace 9";
+        "${modifier}+Ctrl+0" = "move container to workspace 10";
 
         "${modifier}+Shift+1" = "move container to workspace 1; workspace 1";
         "${modifier}+Shift+2" = "move container to workspace 2; workspace 2";
@@ -137,6 +172,8 @@ in
         "${modifier}+Shift+6" = "move container to workspace 6; workspace 6";
         "${modifier}+Shift+7" = "move container to workspace 7; workspace 7";
         "${modifier}+Shift+8" = "move container to workspace 8; workspace 8";
+        "${modifier}+Shift+9" = "move container to workspace 7; workspace 9";
+        "${modifier}+Shift+0" = "move container to workspace 10; workspace 10";
 
         "${modifier}+Shift+c" = "reload";
         "${modifier}+Shift+r" = "restart";
