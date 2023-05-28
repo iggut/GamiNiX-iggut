@@ -1,7 +1,3 @@
-
-
-    #rev = "40cb44fe17b1da56f0adb451433e24d4fbead56e";
-    #sha256 = "sha256-RakBwX6ftXg5Xvwpkj4JIIS1I3ATrBRw6PkFicIOs4k=";
 {
   lib,
   fetchFromGitHub,
@@ -30,8 +26,8 @@ python3Packages.buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "nwg-piotr";
     repo = "nwg-panel";
-    rev = "b060007289cdccb9a51928d5c48d02ff7b17b8ae";
-    sha256 = "sha256-4yufkbmXEbC8fuAoar2vSd69/pCbXK8bzSqFt41JHe4=";
+    rev = "40cb44fe17b1da56f0adb451433e24d4fbead56e";
+    sha256 = "sha256-RakBwX6ftXg5Xvwpkj4JIIS1I3ATrBRw6PkFicIOs4k=";
   };
 
   # No tests
