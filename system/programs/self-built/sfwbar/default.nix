@@ -20,8 +20,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "LBCrion";
     repo = pname;
-    rev = "e313920af8f9b269e0bf35b8f36f57f1b056778f";
-    sha256 = "6S+Khj7uPfsNjEeGiBPvjICUpJv/SKPIUgqHXOApppE=";
+    rev = "16282bda48236658074a1820a0036aaf27608f4b";
+    sha256 = "DYFVWcRiw8jMUj7QZ2BIVwhpK/lkFitM7LKSmi3t0g8=";
   };
 
   nativeBuildInputs = [
