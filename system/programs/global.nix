@@ -11,8 +11,8 @@
     (pkgs.wrapOBS {plugins = with pkgs.obs-studio-plugins; [obs-pipewire-audio-capture];}) # Pipewire audio plugin for OBS Studio
     (callPackage ./self-built/sfwbar {}) # Status bar for Wayland
     (callPackage ./self-built/nwg-panel {}) # Status bar for Wayland
-    (callPackage ./self-built/nwg-dock-hyprland {}) # Dock for Hyprland
     (tesseract4.override {enableLanguages = ["fra" "eng"];})
+    age-plugin-yubikey
     google-chrome # Hate it and love it Browser
     glxinfo
     nss
@@ -22,7 +22,6 @@
     appimage-run # Appimage runner
     samba4Full # Samba server to share files/printers with windows
     aria # Terminal downloader with multiple connections support
-    age-plugin-yubikey
     bat # Better cat command
     btop # System monitor
     cargo # Rust package manager
@@ -36,7 +35,7 @@
     gimp # Image editor
     git # Distributed version control system
     gping # ping with a graph
-    gscan2pdf # Gnome scanning software
+    #gscan2pdf # Gnome scanning software
     helvum # Pipewire patchbay
     jq # JSON parser
     killall # Tool to kill all programs matching process name
@@ -51,12 +50,12 @@
     pciutils # I need me some lspci
     mullvad-vpn # VPN Client
     neovim # Terminal text editor
-    nix-prefetch-github
     nodejs # Node package manager
     ntfs3g # Support NTFS drives
     obs-studio # Recording/Livestream
     onlyoffice-bin # Microsoft Office alternative for Linux
     p7zip # 7zip
+    pam_u2f
     python3 # Python
     ranger # Terminal file manager
     rnnoise-plugin # A real-time noise suppression plugin
@@ -75,14 +74,16 @@
     winetricks # Wine prefix settings manager
     woeusb # Windows ISO Burner
     xorg.xhost # Use x.org server with distrobox
+    yubikey-manager
     yubikey-manager-qt
     yubioath-flutter
+    yubico-pam
+    yubikey-personalization
     zerotierone # Virtual lan network
     ###
-    _1password-gui-beta
+    _1password-gui
     age
     bind
-    bitwarden
     bitwarden-cli
     cached-nix-shell
     cachix
@@ -323,10 +324,6 @@
 
       syntaxHighlighting.enable = true;
 
-      shellInit = ''
-        fastfetch -l nixos --load-config neofetch
-      '';
-
       # Aliases
       shellAliases = {
         apx = "apx --aur"; # Use arch as the base apx container
@@ -409,15 +406,15 @@
   hardware.gpgSmartcards.enable = true;
   services.pcscd.enable = true;
   services.udev.packages = [pkgs.yubikey-personalization];
-  services.yubikey-agent.enable = true;
 
   # Configure as challenge-response for instant login,
   # can't provide the secrets as the challenge gets updated
-  #security.pam.yubico = {
-  #  debug = false;
-  #  enable = true;
-  #  mode = "challenge-response";
-  #};
+  security.pam.yubico = {
+    debug = true;
+    enable = true;
+    mode = "challenge-response";
+    id = [ "23911227" ];
+  };
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
