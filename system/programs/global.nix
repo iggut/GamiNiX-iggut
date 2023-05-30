@@ -22,6 +22,7 @@
     appimage-run # Appimage runner
     samba4Full # Samba server to share files/printers with windows
     aria # Terminal downloader with multiple connections support
+    age-plugin-yubikey
     bat # Better cat command
     btop # System monitor
     cargo # Rust package manager
@@ -74,6 +75,8 @@
     winetricks # Wine prefix settings manager
     woeusb # Windows ISO Burner
     xorg.xhost # Use x.org server with distrobox
+    yubikey-manager-qt
+    yubioath-flutter
     zerotierone # Virtual lan network
     ###
     _1password-gui-beta
@@ -406,6 +409,7 @@
   hardware.gpgSmartcards.enable = true;
   services.pcscd.enable = true;
   services.udev.packages = [pkgs.yubikey-personalization];
+  services.yubikey-agent.enable = true;
 
   # Configure as challenge-response for instant login,
   # can't provide the secrets as the challenge gets updated
