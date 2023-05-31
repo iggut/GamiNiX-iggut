@@ -3,7 +3,7 @@
   pkgs,
   config,
   ...
-}: {
+}:{
   environment.systemPackages = with pkgs; [
     (callPackage ./self-built/apx.nix {}) # Package manager using distrobox
     (callPackage ./self-built/webcord {}) # An open source discord client
@@ -427,4 +427,6 @@
   environment.etc."rnnoise-plugin/librnnoise_ladspa.so".source = "${pkgs.rnnoise-plugin}/lib/ladspa/librnnoise_ladspa.so";
   environment.etc."proton-ge-nix".source = "${(pkgs.callPackage self-built/proton-ge.nix {})}/";
   environment.etc."apx/config.json".source = "${(pkgs.callPackage self-built/apx.nix {})}/etc/apx/config.json";
+
+  security.pam.services.swaylock = { };
 }
