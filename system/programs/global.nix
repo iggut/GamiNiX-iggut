@@ -162,9 +162,11 @@
           eamodio.gitlens
           esbenp.prettier-vscode
           foxundermoon.shell-format
+          genieai.chatgpt-vscode
           github.codespaces
           github.copilot
           github.vscode-github-actions
+          github.vscode-pull-request-github
           ms-azuretools.vscode-docker
           ms-python.python
           ms-python.vscode-pylance
