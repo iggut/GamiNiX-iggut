@@ -13,7 +13,6 @@
     minetest
     osu-lazer-bin
     protonup-qt
-    linux_cachyos
     beautyline-icons
     fastfetch
     ananicy-cpp-rules
@@ -44,7 +43,7 @@
   boot.kernel.sysctl = {"vm.max_map_count" = 2147483642;};
 
   ### Chaotic-LUG ###
-  chaotic.linux_hdr.specialisation.enable = true;
+  chaotic.linux_hdr.specialisation.enable = false;
   chaotic.appmenu-gtk3-module.enable = true;
   # Unstable gamescope from Chaotic-Nyx
   #chaotic.gamescope = {

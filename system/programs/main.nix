@@ -19,7 +19,7 @@ lib.mkIf config.main.user.enable {
       godot_4 # Game engine for 2D and 3D games
       heroic # Epic Games Launcher for Linux
       xfce.thunar # File manager
-      input-remapper # Tool for remapping input device controls
+      #input-remapper # Tool for remapping input device controls
       papermc # Minecraft server software
       pcsx2 # PlayStation 2 emulator
       ppsspp # PSP emulator
@@ -36,6 +36,6 @@ lib.mkIf config.main.user.enable {
     ];
 
   programs.xfconf.enable = true;
-  services.input-remapper.enable = config.main.user.enable;
-  services.input-remapper.enableUdevRules = config.main.user.enable;
+  #services.input-remapper.enable = config.main.user.enable;
+  #services.input-remapper.enableUdevRules = config.main.user.enable;
 }

@@ -26,7 +26,7 @@ lib.mkIf config.main.user.enable {
   services.dbus.enable = true;
 
   home-manager.users.${config.main.user.username}.home = {
-    stateVersion = "22.11";
+    stateVersion = "23.05";
     file.".nix-successful-build" = {
       text = "true";
       recursive = true;

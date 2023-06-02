@@ -161,6 +161,7 @@
           bbenoist.nix
           eamodio.gitlens
           esbenp.prettier-vscode
+          file-icons.file-icons
           foxundermoon.shell-format
           genieai.chatgpt-vscode
           github.codespaces
@@ -174,10 +175,13 @@
           ms-vsliveshare.vsliveshare
           njpwerner.autodocstring
           pkief.material-icon-theme
+          pkief.material-product-icons
           redhat.vscode-xml
           redhat.vscode-yaml
           timonwong.shellcheck
+          tobiasalthoff.atom-material-theme
           tyriar.sort-lines
+          vscode-icons-team.vscode-icons
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
@@ -418,10 +422,9 @@
     id = [ "23911227" ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  boot.kernelPackages = pkgs.linuxPackages_xanmod_stable;
 
   services = {
-    openssh.enable = true;
     mullvad-vpn.enable = true;
   };
 

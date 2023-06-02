@@ -18,5 +18,5 @@
     ./system/users
   ];
 
-  config.system.stateVersion = "22.11"; # Do not change without checking the docs
+  config.system.stateVersion = "23.05"; # Do not change without checking the docs
 }
