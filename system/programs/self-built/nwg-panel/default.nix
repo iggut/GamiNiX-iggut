@@ -26,8 +26,10 @@ python3Packages.buildPythonApplication rec {
   src = fetchFromGitHub {
     owner = "nwg-piotr";
     repo = "nwg-panel";
-    rev = "40cb44fe17b1da56f0adb451433e24d4fbead56e";
-    sha256 = "sha256-RakBwX6ftXg5Xvwpkj4JIIS1I3ATrBRw6PkFicIOs4k=";
+    #rev = "40cb44fe17b1da56f0adb451433e24d4fbead56e";
+    #sha256 = "sha256-RakBwX6ftXg5Xvwpkj4JIIS1I3ATrBRw6PkFicIOs4k=";
+    rev = "a4e18fc9627e4c285affb3aba2f07c64c999396e";
+    sha256 = "sha256-nbHvLWv+cXj39ERT2Hbr7YJ1AxwV6xVXGz4EpqCV8qM=";
   };
 
   # No tests

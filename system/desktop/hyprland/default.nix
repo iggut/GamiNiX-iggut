@@ -114,7 +114,7 @@ exec-once = sleep 2 && bash /home/iggut/.config/hypr/scripts/change-bg.sh "code"
 # Tray applications
 exec-once = kdeconnect-indicator & clipman clear --all & wl-paste -t text --watch clipman store & nm-applet --indicator
 # Standard applications
-exec-once = sleep 2 && code & firedragon
+exec-once = sleep 2 && code & firefox
 exec-once = sleep 4 && corectrl
 exec-once = sleep 5 && webcord
 exec-once = mullvad-vpn
@@ -127,8 +127,8 @@ exec-once = kitty --class startup-monitor --session ~/.config/kitty/kitty-task-m
 # █░▀░█ █▄█ █░▀█ █ ░█░ █▄█ █▀▄
 
 # See available monitors with 'hyprctl monitors'
-monitor = DP-1,1920x1080@165,2560x0,1 
-monitor = HDMI-A-1,2560x1440@60,0x0,1
+monitor = DP-1,1920x1080@165,0x0,1
+monitor = HDMI-A-1,2560x1440@60,1920x0,1
 workspace = 1, monitor:DP-1, default:true
 workspace = 2, monitor:DP-1
 workspace = 3, monitor:DP-1
@@ -447,9 +447,9 @@ windowrule = float, ^(Network)$
 # Remove transparancy from video
 windowrulev2 = opaque,class:^(google-chrome)$,title:^(Netflix)(.*)$
 windowrulev2 = opaque,class:^(google-chrome)$,title:^(.*YouTube.*)$
-windowrulev2 = opaque,class:^(firedragon)$,title:^(.*YouTube.*)$
-windowrulev2 = opaque,class:^(firedragon)$,title:^(Netflix)(.*)$
-windowrulev2 = opaque,class:^(firedragon)$,title:^(Picture-in-Picture)$
+windowrulev2 = opaque,class:^(firefox)$,title:^(.*YouTube.*)$
+windowrulev2 = opaque,class:^(firefox)$,title:^(Netflix)(.*)$
+windowrulev2 = opaque,class:^(firefox)$,title:^(Picture-in-Picture)$
 windowrulev2 = opaque,class:^(looking-glass-client)$
 
 # Move apps to workspaces

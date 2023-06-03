@@ -150,7 +150,7 @@
       applet-window-title
       beautyline-icons
       dr460nized-kde-theme
-      firedragon
+      firefox
       jamesdsp
       libinput-gestures
       libsForQt5.applet-window-buttons

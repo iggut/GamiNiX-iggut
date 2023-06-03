@@ -20,11 +20,11 @@ in {
       extraPackages = with pkgs; [
         rocm-opencl-icd
         rocm-opencl-runtime
-        amdvlk
+        #amdvlk
       ];
-      extraPackages32 = with pkgs; [
-        driversi686Linux.amdvlk
-      ];
+      #extraPackages32 = with pkgs; [
+      #  driversi686Linux.amdvlk
+      #];
     };
 
     #nvidia = {

@@ -81,7 +81,7 @@
     yubikey-personalization
     zerotierone # Virtual lan network
     ###
-    _1password-gui
+    _1password-gui-beta
     age
     bind
     bitwarden-cli

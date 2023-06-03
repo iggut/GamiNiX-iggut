@@ -38,7 +38,7 @@ lib.mkIf config.amd.gpu.enable {
     	}
     });
   '';
-  chaotic.mesa-git.enable = false;
+  chaotic.mesa-git.enable = true;
   environment.systemPackages = with pkgs; [
     radeon-profile
     corectrl # GPU overclocking tool

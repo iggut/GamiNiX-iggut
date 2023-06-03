@@ -353,6 +353,6 @@ lib.mkIf config.main.user.enable {
       // (lib.genAttrs audioVideo (_: ["vlc.desktop"]))
       // (lib.genAttrs documents (_: ["okular.desktop"]))
       // (lib.genAttrs images (_: ["gwenview.desktop"]))
-      // (lib.genAttrs urls (_: ["firedragon.desktop"]));
+      // (lib.genAttrs urls (_: ["firefox.desktop"]));
   };
 }

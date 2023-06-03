@@ -50,7 +50,7 @@ in
         "5" = [{ class = "^looking-glass-client$"; }];
         "4" = [{ class = "^startup-monitor$"; } { class = "^corectrl$"; }];
         "3" = [{ class = "^signal$"; } { title = "^WebCord$"; }];
-        "1" = [{ class = "^firedragon$"; }];
+        "1" = [{ class = "^firefox$"; }];
       };
 
       workspaceOutputAssign = [
