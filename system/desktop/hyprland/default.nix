@@ -129,16 +129,16 @@ exec-once = kitty --class startup-monitor --session ~/.config/kitty/kitty-task-m
 # See available monitors with 'hyprctl monitors'
 monitor = DP-1,1920x1080@165,0x0,1
 monitor = HDMI-A-1,2560x1440@60,1920x0,1
-workspace = 1, monitor:DP-1, default:true
-workspace = 2, monitor:DP-1
-workspace = 3, monitor:DP-1
-workspace = 4, monitor:DP-1
-workspace = 5, monitor:DP-1
-workspace = 6, monitor:DP-1
-workspace = 7, monitor:HDMI-A-1
-workspace = 8, monitor:HDMI-A-1
-workspace = 9, monitor:HDMI-A-1
-workspace = 10, monitor:HDMI-A-1
+workspace = 1, monitor:HDMI-A-1, default:true
+workspace = 2, monitor:HDMI-A-1
+workspace = 3, monitor:HDMI-A-1
+workspace = 4, monitor:HDMI-A-1
+workspace = 5, monitor:HDMI-A-1
+workspace = 6, monitor:HDMI-A-1
+workspace = 7, monitor:DP-1
+workspace = 8, monitor:DP-1
+workspace = 9, monitor:DP-1
+workspace = 10, monitor:DP-1
 
 
 
