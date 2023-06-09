@@ -269,7 +269,7 @@
     };
     _1password-gui = {
       enable = true;
-      package = "_1password-gui-beta"; 
+      package = [ "_1password-gui-beta" ];
       polkitPolicyOwners = ["iggut" "root"];
     };
     #Basic chromium settings (system-wide)
