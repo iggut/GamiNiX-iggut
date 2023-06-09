@@ -43,11 +43,6 @@ in {
     xpadneo.enable = true; # Enable XBOX Gamepad bluetooth driver
     bluetooth = {
       enable = true;
-      settings = {
-        General = {
-          Enable = "Source,Sink,Media,Socket";
-        };
-      };
     };
     uinput.enable = true; # Enable uinput support
   };

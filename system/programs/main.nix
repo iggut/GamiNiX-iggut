@@ -9,7 +9,6 @@
 lib.mkIf config.main.user.enable {
   users.users.${config.main.user.username}.packages = with pkgs;
     lib.mkIf config.main.user.enable [
-      alejandra # The Uncompromising Nix Code Formatter
       bottles # Wine manager
       cemu # Wii U Emulator
       mangohud # Performance monitoring tool for Vulkan and OpenGL games

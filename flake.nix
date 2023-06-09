@@ -1,11 +1,10 @@
 {
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nur.url = "github:nix-community/NUR";
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-    alejandra.inputs.nixpkgs.follows = "nixpkgs";
     # Secrets management
     sops-nix.url = "github:Mic92/sops-nix";
     home-manager = {
@@ -36,7 +35,6 @@
     home-manager,
     nur,
     stylix,
-    alejandra,
     ...
   }: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -51,14 +49,6 @@
         {programs.hyprland.enable = true;}
         ./configuration.nix
         chaotic.nixosModules.default # OUR DEFAULT MODULE
-        {
-          environment.systemPackages = [alejandra];
-        }
-        {
-          nixpkgs.config.permittedInsecurePackages = [
-            "openssl-1.1.1u"
-          ];
-        }       
       ];
     };
   };

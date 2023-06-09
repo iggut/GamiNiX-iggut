@@ -390,7 +390,7 @@
   };
 
   # Tune the Zen kernel
-  programs.cfs-zen-tweaks.enable = true;
+  #programs.cfs-zen-tweaks.enable = true;
 
   ## A few other kernel tweaks
   boot.kernel.sysctl = {
