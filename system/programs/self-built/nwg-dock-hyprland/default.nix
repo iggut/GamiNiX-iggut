@@ -2,7 +2,7 @@
 , buildGoModule
 , fetchFromGitHub
 , pkg-config
-, gtk3
+, wrapGAppsHook
 , gtk-layer-shell
 }:
 
@@ -17,18 +17,18 @@ buildGoModule rec {
     sha256 = "sha256-7vdfxE3X2J7bDLzose0dKmjxNQhS5+/ROky9wkK1gc0=";
   };
 
-  vendorSha256 = "sha256-GhcrIVnZRbiGTfeUAWvslOVWDZmoL0ZRnjgTtQgxe2Q=";
+  vendorHash = "sha256-GhcrIVnZRbiGTfeUAWvslOVWDZmoL0ZRnjgTtQgxe2Q=";
 
   ldflags = [ "-s" "-w" ];
 
-  nativeBuildInputs = [ pkg-config ];
-  buildInputs = [ gtk3 gtk-layer-shell ];
+  nativeBuildInputs = [ pkg-config wrapGAppsHook ];
+  buildInputs = [ gtk-layer-shell ];
 
   meta = with lib; {
-    description = "GTK3-based dock for hyprland";
+    description = "GTK3-based dock for Hyprland";
     homepage = "https://github.com/nwg-piotr/nwg-dock-hyprland";
     license = licenses.mit;
     platforms = platforms.linux;
-    maintainers = with maintainers; [ dit7ya ];
+    maintainers = with maintainers; [ aleksana ];
   };
 }

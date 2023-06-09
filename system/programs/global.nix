@@ -7,10 +7,10 @@
   environment.systemPackages = with pkgs; [
     (callPackage ./self-built/apx.nix {}) # Package manager using distrobox
     (callPackage ./self-built/webcord {}) # An open source discord client
-    #(firefox.override {extraNativeMessagingHosts = [(callPackage ./self-built/pipewire-screenaudio {})];}) # Browser
     (pkgs.wrapOBS {plugins = with pkgs.obs-studio-plugins; [obs-pipewire-audio-capture];}) # Pipewire audio plugin for OBS Studio
     (callPackage ./self-built/sfwbar {}) # Status bar for Wayland
     (callPackage ./self-built/nwg-panel {}) # Status bar for Wayland
+    (callPackage ./self-built/nwg-dock-hyprland {}) # Dock for Wayland
     (tesseract4.override {enableLanguages = ["fra" "eng"];})
     age-plugin-yubikey
     google-chrome # Hate it and love it Browser
@@ -81,7 +81,7 @@
     yubikey-personalization
     zerotierone # Virtual lan network
     ###
-    _1password-gui-beta
+    #_1password-gui-beta
     age
     bind
     bitwarden-cli
@@ -267,11 +267,14 @@
     _1password = {
       enable = true;
     };
+
     _1password-gui = {
       enable = true;
-      package = [ "_1password-gui-beta" ];
-      polkitPolicyOwners = ["iggut" "root"];
+
+      polkitPolicyOwners = [ "iggut" "root" ];
+
     };
+
     #Basic chromium settings (system-wide)
     chromium = {
       defaultSearchProviderEnabled = true;

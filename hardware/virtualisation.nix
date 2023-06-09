@@ -33,7 +33,6 @@
       "video=efifb:off"
       "video=vesafb:off"
       "vfio-pci.ids=10de:2482,10de:228b"
-      "quiet"
       "kvm.ignore_msrs=1"
       "kvm.report_ignored_msrs=0"
       "split_lock_detect=off" # https://www.phoronix.com/news/Linux-Splitlock-Hurts-Gaming
