@@ -1,7 +1,7 @@
 {
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nur.url = "github:nix-community/NUR";
     # Secrets management

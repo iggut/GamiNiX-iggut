@@ -264,6 +264,14 @@
   # Disable coredumps
   systemd.coredump.enable = false;
   programs = {
+    _1password = {
+      enable = true;
+    };
+    _1password-gui = {
+      enable = true;
+      package = "pkgs._1password-gui-beta"; 
+      polkitPolicyOwners = ["iggut" "root"];
+    };
     #Basic chromium settings (system-wide)
     chromium = {
       defaultSearchProviderEnabled = true;
@@ -278,7 +286,8 @@
         "mdjildafknihdffpkfmmpnpoiajfjnjd" # Consent-O-Matic
         "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock
         "njdfdhgcmkocbgbhcioffdbicglldapd" # LocalCDN
-        "nngceckbapebfimnlniiiahkandclblb" # Bitwarden
+        "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1Password
+        "mjidkpedjlfnanainpdfnedkdlacidla" # Mouse gestures
       ];
       extraOpts = {
         "HomepageLocation" = "https://www.google.com";
