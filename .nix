@@ -121,20 +121,11 @@
     };
 
     virtualisation-settings = {
-      docker.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = true;
-      }; # Container manager
 
       libvirtd.enable = lib.mkOption {
         type = lib.types.bool;
         default = true;
       }; # A daemon that manages virtual machines
-
-      lxd.enable = lib.mkOption {
-        type = lib.types.bool;
-        default = true;
-      }; # Container daemon
 
       spiceUSBRedirection.enable = lib.mkOption {
         type = lib.types.bool;

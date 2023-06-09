@@ -1,8 +1,7 @@
 {
   inputs = {
     hyprland.url = "github:hyprwm/Hyprland";
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     nur.url = "github:nix-community/NUR";
     # Secrets management
@@ -49,6 +48,11 @@
         {programs.hyprland.enable = true;}
         ./configuration.nix
         chaotic.nixosModules.default # OUR DEFAULT MODULE
+        {
+          nixpkgs.config.permittedInsecurePackages = [
+            "openssl-1.1.1u"
+          ];
+        }
       ];
     };
   };

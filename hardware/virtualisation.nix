@@ -63,8 +63,7 @@
 
   systemd.tmpfiles.rules = ["f /dev/shm/looking-glass 0666 iggut kvm -"];
   environment.sessionVariables.LIBVIRT_DEFAULT_URI = ["qemu:///system"];
-  environment.systemPackages = with pkgs;
-    lib.mkIf config.virtualisation-settings.docker.enable [
+  environment.systemPackages = with pkgs; [
       docker # Containers - Used to create and run containers
       distrobox # Wrapper around docker to create and start linux containers - Tool for creating and managing Linux containers using Docker
       virt-manager # Gui for QEMU/KVM Virtualisation - Graphical user interface for managing QEMU/KVM virtual machines
@@ -109,10 +108,8 @@
       dockerSocket.enable = true;
       enable = true;
     };
-    lxd.enable = config.virtualisation-settings.lxd.enable;
     spiceUSBRedirection.enable = config.virtualisation-settings.spiceUSBRedirection.enable;
     waydroid.enable = config.virtualisation-settings.waydroid.enable;
-    #docker.enable = config.virtualisation-settings.docker.enable;
   };
 
   fonts.fonts = [pkgs.dejavu_fonts]; # Need for looking-glass
