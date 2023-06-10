@@ -163,10 +163,11 @@
           bbenoist.nix
           eamodio.gitlens
           esbenp.prettier-vscode
-          file-icons.file-icons
+          tal7aouy.icons
           foxundermoon.shell-format
           genieai.chatgpt-vscode
           github.codespaces
+          sldobri.bunker
           github.copilot
           github.vscode-github-actions
           github.vscode-pull-request-github
@@ -183,7 +184,8 @@
           timonwong.shellcheck
           tobiasalthoff.atom-material-theme
           tyriar.sort-lines
-          vscode-icons-team.vscode-icons
+          BeardedBear.beardedicons
+          EliverLara.sweet-vscode-icons
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
