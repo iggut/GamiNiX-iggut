@@ -163,11 +163,11 @@
           bbenoist.nix
           eamodio.gitlens
           esbenp.prettier-vscode
-          tal7aouy.icons
           foxundermoon.shell-format
           genieai.chatgpt-vscode
           github.codespaces
-          sldobri.bunker
+          github.github-vscode-theme
+          roman.ayu-next
           github.copilot
           github.vscode-github-actions
           github.vscode-pull-request-github
@@ -184,8 +184,6 @@
           timonwong.shellcheck
           tobiasalthoff.atom-material-theme
           tyriar.sort-lines
-          BeardedBear.beardedicons
-          EliverLara.sweet-vscode-icons
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
@@ -200,11 +198,28 @@
             sha256 = "sha256-2FAq5jEbnQbfXa7O9O231aun/pJ8mkoBf1u4ekkBQu8=";
             version = "2023.13.10931546";
           }
+          {
+            name = "beardedicons";
+            publisher = "beardedbear";
+            sha256 = "sha256-CyBWz0I11g5qiAWvMeYC9KO+pbwJS5MpwLtmMhDrz3E=";
+            version = "1.12.0";
+          }
+          {
+            name = "materialiconic-product-icons";
+            publisher = "nyxb";
+            sha256 = "sha256-BHgRhOUVhV1DyuofVRYtVU0/u7vZzdSxJEObDg481cI=";
+            version = "0.0.2";
+          }
         ];
     })
     xdg-utils
     yarn
   ];
+
+  ## Tired of this.
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=5s
+  '';
 
   users.defaultUserShell = pkgs.zsh; # Use ZSH shell for all users
 
