@@ -114,7 +114,7 @@ exec-once = sleep 2 && bash /home/iggut/.config/hypr/scripts/change-bg.sh "code"
 # Tray applications
 exec-once = kdeconnect-indicator & clipman clear --all & wl-paste -t text --watch clipman store & nm-applet --indicator
 # Standard applications
-exec-once = sleep 2 && code & firefox
+exec-once = sleep 2 && code
 exec-once = sleep 4 && corectrl
 exec-once = sleep 5 && webcord
 exec-once = mullvad-vpn

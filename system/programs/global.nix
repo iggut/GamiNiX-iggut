@@ -48,12 +48,15 @@
     libnotify # Send desktop notifications
     bc # Arbitrary precision calculator language
     pciutils # I need me some lspci
+    materia-kde-theme
+    materia-theme
     mullvad-vpn # VPN Client
     neovim # Terminal text editor
     nodejs # Node package manager
     ntfs3g # Support NTFS drives
     obs-studio # Recording/Livestream
     onlyoffice-bin # Microsoft Office alternative for Linux
+    papirus-icon-theme
     p7zip # 7zip
     pam_u2f
     python3 # Python
@@ -81,7 +84,6 @@
     yubikey-personalization
     zerotierone # Virtual lan network
     ###
-    #_1password-gui-beta
     age
     bind
     bitwarden-cli
@@ -277,14 +279,10 @@
 
     #Basic chromium settings (system-wide)
     chromium = {
-      defaultSearchProviderEnabled = true;
-      defaultSearchProviderSearchURL = "https://www.google.com/search?q=%s";
-      defaultSearchProviderSuggestURL = "https://www.google.com/autocomplete?q=%s";
       enable = true;
       extensions = [
         "ajhmfdgkijocedmfjonnpjfojldioehi" # Privacy Pass
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock origin
-        "hipekcciheckooncpjeljhnekcoolahp" # Tabliss
         "kbfnbcaeplbcioakkpcpgfkobkghlhen" # Grammarly
         "mdjildafknihdffpkfmmpnpoiajfjnjd" # Consent-O-Matic
         "mnjggcdmjocbbbhaepdhchncahnbgone" # SponsorBlock
@@ -292,44 +290,22 @@
         "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1Password
         "mjidkpedjlfnanainpdfnedkdlacidla" # Mouse gestures
       ];
-      extraOpts = {
-        "HomepageLocation" = "https://www.google.com";
-        "QuicAllowed" = true;
-        "RestoreOnStartup" = true;
-        "ShowHomeButton" = true;
-      };
     };
 
     # In case I need to fix my phone & Waydroid
     adb.enable = true;
 
     # Prevent TOFU MITM
-    ssh.knownHosts = {
-      github-rsa.hostNames = ["github.com"];
-      github-rsa.publicKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgAR+aHGaiM1ymGCClBqKId6PmkT4fKKc1cpBx+sNcRyS74AsgHoRGEq+fmzRZs2vVsd2XDbr5wzTmg0AxA9VCZ1HAnBPpS89BM9WzrfeVKboIZbmyDvRr0KDKu5tDjsmOjBU4WdZcjh+K8KNjdN/xfi9hNcBQvUBeu7mpvoxu6AOb2Q2xnO0WNhOBRyt3mrjnwgGVLWcFz73vEbX/HcyVMr+iTH5952+6J/jNm0/hYNHrXE4cRaooQZ4fjwMj9I7y/qYHrQ3p4wYh5SG2mRX39sPQ7Nhe3x2IPmBes7B4NYMFuGANHNZYSDewwslJUssH1WFFVppiQM32cxIPLFfSs2VckLIVwKIc5qGvSk912RhQ42kuOOTWTS3yJxU+yVt+L+ffTpRsWMnukWnnZg8kSPVGG0sTbbHNP04k9BS6Y9uwF4vgi5nXOjGofmPfMdeTP6X89NPLeApdBZArS30Z037e5PFqinmtLwIn2O0KgHBQPEZUdTHrWIlZ8wuG/6k=";
-      github-ed25519.hostNames = ["github.com"];
-      github-ed25519.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUYnAPuFC2bnrIHM8DiweTJThqZV9fjZMmI5Rx6bgw7";
-      gitlab-rsa.hostNames = ["gitlab.com"];
-      gitlab-rsa.publicKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgAR+aHGaiM1ymGCClBqKId6PmkT4fKKc1cpBx+sNcRyS74AsgHoRGEq+fmzRZs2vVsd2XDbr5wzTmg0AxA9VCZ1HAnBPpS89BM9WzrfeVKboIZbmyDvRr0KDKu5tDjsmOjBU4WdZcjh+K8KNjdN/xfi9hNcBQvUBeu7mpvoxu6AOb2Q2xnO0WNhOBRyt3mrjnwgGVLWcFz73vEbX/HcyVMr+iTH5952+6J/jNm0/hYNHrXE4cRaooQZ4fjwMj9I7y/qYHrQ3p4wYh5SG2mRX39sPQ7Nhe3x2IPmBes7B4NYMFuGANHNZYSDewwslJUssH1WFFVppiQM32cxIPLFfSs2VckLIVwKIc5qGvSk912RhQ42kuOOTWTS3yJxU+yVt+L+ffTpRsWMnukWnnZg8kSPVGG0sTbbHNP04k9BS6Y9uwF4vgi5nXOjGofmPfMdeTP6X89NPLeApdBZArS30Z037e5PFqinmtLwIn2O0KgHBQPEZUdTHrWIlZ8wuG/6k=";
-      gitlab-ed25519.hostNames = ["gitlab.com"];
-      gitlab-ed25519.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUYnAPuFC2bnrIHM8DiweTJThqZV9fjZMmI5Rx6bgw7";
-    };
-
-    # Enable Firejail
-    firejail = {
-      enable = true;
-      wrappedBinaries = {
-        google-chrome = {
-          executable = "${pkgs.google-chrome}/opt/google/chrome/google-chrome";
-          profile = "${pkgs.firejail}/etc/firejail/google-chrome.profile";
-          extraArgs = [
-            "--dbus-user.talk=org.freedesktop.Notifications"
-            "--env=GTK_THEME=Sweet-dark:dark"
-            "--ignore=private-dev"
-          ];
-        };
-      };
-    };
+    #ssh.knownHosts = {
+    #  github-rsa.hostNames = ["github.com"];
+    #  github-rsa.publicKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgAR+aHGaiM1ymGCClBqKId6PmkT4fKKc1cpBx+sNcRyS74AsgHoRGEq+fmzRZs2vVsd2XDbr5wzTmg0AxA9VCZ1HAnBPpS89BM9WzrfeVKboIZbmyDvRr0KDKu5tDjsmOjBU4WdZcjh+K8KNjdN/xfi9hNcBQvUBeu7mpvoxu6AOb2Q2xnO0WNhOBRyt3mrjnwgGVLWcFz73vEbX/HcyVMr+iTH5952+6J/jNm0/hYNHrXE4cRaooQZ4fjwMj9I7y/qYHrQ3p4wYh5SG2mRX39sPQ7Nhe3x2IPmBes7B4NYMFuGANHNZYSDewwslJUssH1WFFVppiQM32cxIPLFfSs2VckLIVwKIc5qGvSk912RhQ42kuOOTWTS3yJxU+yVt+L+ffTpRsWMnukWnnZg8kSPVGG0sTbbHNP04k9BS6Y9uwF4vgi5nXOjGofmPfMdeTP6X89NPLeApdBZArS30Z037e5PFqinmtLwIn2O0KgHBQPEZUdTHrWIlZ8wuG/6k=";
+    #  github-ed25519.hostNames = ["github.com"];
+    #  github-ed25519.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUYnAPuFC2bnrIHM8DiweTJThqZV9fjZMmI5Rx6bgw7";
+    #  gitlab-rsa.hostNames = ["gitlab.com"];
+    #  gitlab-rsa.publicKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgAR+aHGaiM1ymGCClBqKId6PmkT4fKKc1cpBx+sNcRyS74AsgHoRGEq+fmzRZs2vVsd2XDbr5wzTmg0AxA9VCZ1HAnBPpS89BM9WzrfeVKboIZbmyDvRr0KDKu5tDjsmOjBU4WdZcjh+K8KNjdN/xfi9hNcBQvUBeu7mpvoxu6AOb2Q2xnO0WNhOBRyt3mrjnwgGVLWcFz73vEbX/HcyVMr+iTH5952+6J/jNm0/hYNHrXE4cRaooQZ4fjwMj9I7y/qYHrQ3p4wYh5SG2mRX39sPQ7Nhe3x2IPmBes7B4NYMFuGANHNZYSDewwslJUssH1WFFVppiQM32cxIPLFfSs2VckLIVwKIc5qGvSk912RhQ42kuOOTWTS3yJxU+yVt+L+ffTpRsWMnukWnnZg8kSPVGG0sTbbHNP04k9BS6Y9uwF4vgi5nXOjGofmPfMdeTP6X89NPLeApdBZArS30Z037e5PFqinmtLwIn2O0KgHBQPEZUdTHrWIlZ8wuG/6k=";
+    #  gitlab-ed25519.hostNames = ["gitlab.com"];
+    #  gitlab-ed25519.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBUYnAPuFC2bnrIHM8DiweTJThqZV9fjZMmI5Rx6bgw7";
+    #};
 
     zsh = {
       enable = true;
@@ -400,9 +376,6 @@
     enableNotifications = true;
     freeMemThreshold = 5;
   };
-
-  # Tune the Zen kernel
-  #programs.cfs-zen-tweaks.enable = true;
 
   ## A few other kernel tweaks
   boot.kernel.sysctl = {
